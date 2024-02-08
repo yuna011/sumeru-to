@@ -12,7 +12,36 @@ export default defineConfig({
 
   // Useful for theme customization
   theme: {
-    extend: {},
+    extend: {
+      keyframes:{
+        float:{
+          "0%":{transform: "translateY(0)"},
+          "50%":{transform: "translateY(-15px)"},
+          "100%":{transform: "translateY(0)"},
+        },
+        fadeIn:{
+          "from":{opacity:"0", transform:"translateY(-20px)"},
+          "to":{opacity:"1"}
+        },
+        zoomIn:{
+          "from":{opacity:"0", transform:"scale(0.6)"},
+          "to":{opacity:"1", transform:"scale(1)"}
+        }
+      },
+      tokens:{
+        animations:{
+          float:{
+            value:"float 3s infinite"
+          },
+          fadeIn:{
+            value:"fadeIn 3s ease 0s 1 normal"
+          },
+          zoomIn:{
+            value:"zoomIn 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards"
+          }
+        }
+      },
+    },
   },
 
   // The output directory for your css system
